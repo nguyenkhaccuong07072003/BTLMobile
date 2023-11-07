@@ -11,9 +11,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* Thêm màn hình đăng nhập đăng kí ở đây */}
-        {/* Thằng  Stack.Screen nào ở trên thì nó chạy vào trước*/}
-        {/* Ví dụ khi đăng nhập xong sẽ vào thằng Navigition */}
         <Stack.Screen name="WelCome" component={WelCome} options={{ headerShown: false }} />
         <Stack.Screen name="Navigition" component={Navigition} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />

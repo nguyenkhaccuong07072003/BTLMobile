@@ -35,7 +35,6 @@ export default function Navigition() {
                 tabBarStyle: { backgroundColor: '#61EBEB' },
                 tabBarInactiveTintColor: '#000',
             })}>
-                {/* Code mấy thằng  Cart User... ở đây*/}
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Cart" component={Cart} />
             <Tab.Screen name="Notification" component={Notification} options={{ headerShown: false }}/>
