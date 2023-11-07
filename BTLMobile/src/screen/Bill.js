@@ -5,6 +5,7 @@ export default function Bill() {
     return (
         <View>
             <Text>Bill</Text>
+            <Text>Test</Text>
         </View>
     )
 }
