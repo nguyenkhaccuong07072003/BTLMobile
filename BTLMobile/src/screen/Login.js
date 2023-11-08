@@ -8,12 +8,15 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import Checkbox from 'expo-checkbox';
-
+import { Ionicons } from '@expo/vector-icons';
 
 const Login = ({ navigation }) => {
   const [isChecked, setChecked] = useState(false)
   return (
     <View style={styles.login}>
+      <TouchableOpacity style={styles.touchback}>
+        <Ionicons name="arrow-back-sharp" size={30} color="black" onPress={() => navigation.navigate('WelCome')} />
+      </TouchableOpacity>
       <Text style={styles.title}>Login</Text>
       <KeyboardAvoidingView>
         <View style={styles.usename}>
@@ -53,19 +56,19 @@ const Login = ({ navigation }) => {
         />
         <Text> I agree to all requests</Text>
       </View>
-      <Button
-        title='goback'
-        onPress={() => navigation.goback()}
-      />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  touchback: {
+    paddingHorizontal: 10,
+    marginTop: 50,
+  },
   title: {
     textAlign: 'center',
     fontSize: 36,
-    marginTop: 50,
+    marginTop: 10,
   },
 
   usename: {

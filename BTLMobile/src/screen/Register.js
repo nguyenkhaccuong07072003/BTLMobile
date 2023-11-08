@@ -8,7 +8,7 @@ import { View,
          StyleSheet
 } from 'react-native'
 import React, { useState } from 'react'
-
+import { Ionicons } from '@expo/vector-icons';
 
 const Register = ({navigation})  => {
   const [usename, setTask1] = useState('');
@@ -31,75 +31,76 @@ const Register = ({navigation})  => {
     style={styles.container}
     >
       <View style={styles.register}>
-      <Text style={styles.title}>Sign up</Text>
+        <TouchableOpacity style={styles.touchback}>
+          <Ionicons name="arrow-back-sharp" size={30} color="black" onPress={() => navigation.navigate('Login')} />
+        </TouchableOpacity>
+        <Text style={styles.title}>Sign up</Text>
+          <View style={styles.input}>
+            <View style={styles.request}>
+              <Text style={styles.text}>Tên đăng ký</Text>
+              <Text style={styles.icon}>*</Text>
+            </View>
+            <TextInput style={styles.textbox} placeholder='Enter Name'/>
+          </View>
+          <View style={styles.input}>
+            <View style={styles.request}>
+              <Text style={styles.text}>Năm sinh</Text>
+              <Text style={styles.icon}>*</Text>
+            </View>
+            <TextInput style={styles.textbox} placeholder='Enter Year'/>
+          </View>
+
+          <View style={styles.input}>
+            <View style={styles.request}>
+              <Text style={styles.text}>Địa chỉ</Text>
+              <Text style={styles.icon}>*</Text>
+            </View>
+            <TextInput style={styles.textbox} placeholder='Enter Address'/>
+          </View>
+
+          <View style={styles.input}>
+            <View style={styles.request}>
+              <Text style={styles.text}>Số điện thoại</Text>
+              <Text style={styles.icon}>*</Text>
+            </View>
+            <TextInput style={styles.textbox} placeholder='Enter PhoneNumber'/>
+          </View>
+
+          <View style={styles.input}>
+            <View style={styles.request}>
+              <Text style={styles.text}>Mật khẩu</Text>
+              <Text style={styles.icon}>*</Text>
+            </View>
+            <TextInput style={styles.textbox} placeholder='Enter Pass'/>
+          </View>
+
+          <View style={styles.input}>
+            <View style={styles.request}>
+              <Text style={styles.text}>Nhập lại mật khẩu</Text>
+              <Text style={styles.icon}>*</Text>
+            </View>
+            <TextInput style={styles.textbox} placeholder='Enter Pass again'/>
+          </View>
       
-        <View style={styles.input}>
-          <View style={styles.request}>
-            <Text style={styles.text}>Tên đăng ký</Text>
-            <Text style={styles.icon}>*</Text>
-          </View>
-          <TextInput style={styles.textbox} placeholder='Enter Name'/>
-        </View>
 
-        <View style={styles.input}>
-          <View style={styles.request}>
-            <Text style={styles.text}>Năm sinh</Text>
-            <Text style={styles.icon}>*</Text>
-          </View>
-          <TextInput style={styles.textbox} placeholder='Enter Year'/>
-        </View>
-
-        <View style={styles.input}>
-          <View style={styles.request}>
-            <Text style={styles.text}>Địa chỉ</Text>
-            <Text style={styles.icon}>*</Text>
-          </View>
-          <TextInput style={styles.textbox} placeholder='Enter Address'/>
-        </View>
-
-        <View style={styles.input}>
-          <View style={styles.request}>
-            <Text style={styles.text}>Số điện thoại</Text>
-            <Text style={styles.icon}>*</Text>
-          </View>
-          <TextInput style={styles.textbox} placeholder='Enter PhoneNumber'/>
-        </View>
-
-        <View style={styles.input}>
-          <View style={styles.request}>
-            <Text style={styles.text}>Mật khẩu</Text>
-            <Text style={styles.icon}>*</Text>
-          </View>
-          <TextInput style={styles.textbox} placeholder='Enter Pass'/>
-        </View>
-
-        <View style={styles.input}>
-          <View style={styles.request}>
-            <Text style={styles.text}>Nhập lại mật khẩu</Text>
-            <Text style={styles.icon}>*</Text>
-          </View>
-          <TextInput style={styles.textbox} placeholder='Enter Pass again'/>
-        </View>
-      
-
-        <View style={styles.button}>
-          <TouchableOpacity
-            onPress={Popup}
-          >
-            <View style={styles.clickbutton}>
-              <Text style={styles.textbutton}>Đăng ký</Text>
-            </View>  
-          </TouchableOpacity>
-        </View> 
-        <Button 
-          title='go back'
-          onPress={()=>navigation.goBack()}
-        />
+          <View style={styles.button}>
+            <TouchableOpacity
+              onPress={Popup}
+            >
+              <View style={styles.clickbutton}>
+                <Text style={styles.textbutton}>Đăng ký</Text>
+              </View>  
+            </TouchableOpacity>
+          </View> 
       </View>
     </KeyboardAvoidingView>
   )
 }
 const styles = StyleSheet.create({
+  touchback: {
+    paddingHorizontal: 10,
+    marginTop: 50,
+  },
   title:{
       textAlign: 'center',
       fontSize: 36,
@@ -131,7 +132,6 @@ const styles = StyleSheet.create({
   button:{
       alignItems:'center',
       justifyContent:'center',
-      
       
   },
 
