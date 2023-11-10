@@ -1,57 +1,101 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { TextInput } from 'react-native-paper'
+import { data } from '../../data/hot'
 
 export default function Home({ navigation }) {
+  const { Hot } = data
   return (
-    <View style={{ flex: 1 }}>
-      <Image
-        style={styles.tinyLogo}
-        source={require('../img/category/1.png')}
-      />
-      <ScrollView>
-        <View>
+    <View style={{ marginTop:50 ,backgroundColor:'#faebd7' }}>
+      <View style={styles.header}>
+          <TextInput style={{width: 370 , height:30 , backgroundColor:'white', marginLeft:10, borderRadius:5,borderWidth:1, }} placeholder='Search'  />
+      </View>
+      <ScrollView horizontal style={{flexDirection:'row',marginLeft:10, marginRight:10, }} showsHorizontalScrollIndicator={false}>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Coffee')}>
-            <Text style={{ color: 'white', fontSize: 18, fontWeight: '600' }}>
+            <Text style={{ color: '#000000', fontSize: 16, fontWeight: '600' }}>
               Coffee
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Milk')}>
-            <Text style={{ color: 'white', fontSize: 18, fontWeight: '600' }}>
+            <Text style={{ color: '#000000', fontSize: 16, fontWeight: '600' }}>
               Milk shake
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Smoothie')}>
-            <Text style={{ color: 'white', fontSize: 18, fontWeight: '600' }}>
+            <Text style={{ color: '#000000', fontSize: 16, fontWeight: '600' }}>
               Smoothie
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Tea')}>
-            <Text style={{ color: 'white', fontSize: 18, fontWeight: '600' }}>
+            <Text style={{ color: '#000000', fontSize: 16, fontWeight: '600' }}>
               Tea
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Other')}>
-            <Text style={{ color: 'white', fontSize: 18, fontWeight: '600' }}>
+            <Text style={{ color: '#000000', fontSize: 16, fontWeight: '600' }}>
               Other
             </Text>
           </TouchableOpacity>
-        </View>
+      </ScrollView>
+      <Text style={{fontSize:20, color:'red',marginLeft:10, marginTop:10}}>Recommmend</Text>
+      <ScrollView horizontal style={{flexDirection:'row',}} showsHorizontalScrollIndicator={false}>
+        <TouchableOpacity style={styles.product} onPress={() => navigation.navigate('Coffee')}>
+          {Hot.map((item) => (
+            <TouchableOpacity key={item.id} onPress={() => navigation.navigate('Product_Detail')} style={{marginRight: 20}}>
+              <View style={{ flexDirection: 'column' , width:100,}}>
+                <Image
+                  style={styles.img}
+                  source={item.img}
+                />
+                <View style={{
+                  justifyContent: 'center',
+                  gap: 10,
+                  marginLeft:11,
+                }}>
+                  <Text style={{
+                    fontWeight: '500',
+                    fontSize: 13
+                  }}>
+                    {item.name}
+                  </Text>
+                  <Text>
+                    {item.price}
+                  </Text>
+                  <Text>
+                    {item.star}
+                  </Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+                  ))}
+        </TouchableOpacity>
       </ScrollView>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  tinyLogo: {
-    width: '100%',
-    marginBottom: 20
+  header:
+  {
+    
   },
   button: {
-    backgroundColor: '#2DE840',
+    width:100,
+    height:24,
+    backgroundColor: '#f0ffff',
     alignItems: 'center',
-    padding: 20,
-    margin: 20,
-    borderRadius: 10,
-    marginTop: 0
-  }
+    margin:5,
+    borderRadius: 16,
+    marginTop: 10,
+  },
+  img: {
+    width: 90,
+    height: 140,
+    margin: 10,
+    borderRadius: 10
+  },
+  product:{
+    flexDirection:'row',
+  },
+  
 })

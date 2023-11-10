@@ -31,17 +31,20 @@ const Register = ({navigation})  => {
     style={styles.container}
     >
       <View style={styles.register}>
-        <TouchableOpacity style={styles.touchback}>
-          <Ionicons name="arrow-back-sharp" size={30} color="black" onPress={() => navigation.navigate('Login')} />
-        </TouchableOpacity>
-        <Text style={styles.title}>Sign up</Text>
-          <View style={styles.input}>
-            <View style={styles.request}>
-              <Text style={styles.text}>Tên đăng ký</Text>
-              <Text style={styles.icon}>*</Text>
-            </View>
+        <View style={{flexDirection:'row'}}>
+          <TouchableOpacity style={styles.touchback}>
+            <Ionicons name="arrow-back-sharp" size={30} color="black" onPress={() => navigation.navigate('Login')} />
+          </TouchableOpacity>
+          <Text style={styles.title}>Sign up</Text></View>
+          <View style={{alignItems:'center'}}>
+            <View style={styles.input}>
+              <View style={styles.request}>
+                <Text style={styles.text}>Tên đăng ký</Text>
+                <Text style={styles.icon}>*</Text>
+              </View>
             <TextInput style={styles.textbox} placeholder='Enter Name'/>
           </View>
+          
           <View style={styles.input}>
             <View style={styles.request}>
               <Text style={styles.text}>Năm sinh</Text>
@@ -81,8 +84,7 @@ const Register = ({navigation})  => {
             </View>
             <TextInput style={styles.textbox} placeholder='Enter Pass again'/>
           </View>
-      
-
+          </View>
           <View style={styles.button}>
             <TouchableOpacity
               onPress={Popup}
@@ -104,6 +106,8 @@ const styles = StyleSheet.create({
   title:{
       textAlign: 'center',
       fontSize: 36,
+      marginTop:80,
+      marginLeft:90,
   },
   textbox:{
       width: 292,
@@ -115,6 +119,7 @@ const styles = StyleSheet.create({
 
   input:{
       marginTop: 20,
+  
   },
 
   text:{

@@ -1,14 +1,14 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { data } from '../../data'
+import { data } from '../../data/product'
 export default function Coffee({ navigation }) {
     const { Coffee } = data
     return (
         <View style={{ flex: 1 }}>
-            <Image
+            {/* <Image
                 style={styles.tinyLogo}
                 source={require('../img/category/2.png')}
-            />
+            /> */}
             <ScrollView>
                 {Coffee.map((item) => (
                     <TouchableOpacity key={item.id} onPress={() => navigation.navigate('Product_Detail')}>

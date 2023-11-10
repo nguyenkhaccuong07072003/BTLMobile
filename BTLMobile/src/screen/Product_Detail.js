@@ -1,9 +1,12 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
-
-export default function Product_Detail() {
+import { Ionicons } from '@expo/vector-icons';
+export default function Product_Detail({navigation}) {
     return (
         <View style={{flex:1,backgroundColor:'white'}}>
+            <TouchableOpacity style={styles.touchback}>
+                <Ionicons name="arrow-back-sharp" size={30} color="black" onPress={() => navigation.navigate('Home')} />
+            </TouchableOpacity>
             <Image
                 style={styles.tinyLogo}
                 source={require('../img/icon/duahau.png')}
@@ -104,6 +107,10 @@ export default function Product_Detail() {
 }
 
 const styles = StyleSheet.create({
+    touchback: {
+        paddingHorizontal: 10,
+        marginTop: 50,
+      },
     tinyLogo:{
         alignSelf:'center'
     }

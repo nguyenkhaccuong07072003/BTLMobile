@@ -4,7 +4,7 @@ const WelCome = ({ navigation }) => {
   const SkiiImage = require('./img/6493323_image.webp');
   return (
     <View>
-      <Text style={styles.title}>Welcomen</Text>
+      <Text style={styles.title}>Welcome</Text>
       <Text style={styles.text}>App FaBi</Text>
       <View style={styles.comeon}>
         <TouchableOpacity>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     fontSize: 24,
-    fontFamily: 'italic',
+    //fontFamily: 'italic',
   },
   clickcomeon: {
     width: 100,

@@ -35,8 +35,8 @@ export default function Navigition() {
                 tabBarStyle: { backgroundColor: '#61EBEB' },
                 tabBarInactiveTintColor: '#000',
             })}>
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Cart" component={Cart} />
+            <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
+            <Tab.Screen name="Cart" component={Cart} options={{ headerShown: false }}/>
             <Tab.Screen name="Notification" component={Notification} options={{ headerShown: false }}/>
             <Tab.Screen name="User" component={User} options={{ headerShown: false }}/> 
             <Tab.Screen name="Coffee" component={Coffee} options={{ tabBarButton: () => null }} />
