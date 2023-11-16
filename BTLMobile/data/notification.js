@@ -2,15 +2,23 @@ export const data={
     Noti:[
         {
             id:'1',
-            name:'Ngày 21/10 đến 15/11 có ưu đãi đặc biệt mua 2 tặng 1',
+            name:'NGÀY 21.10 ĐẾN 15.11 CÓ ƯU ĐÃI ĐẶC BIỆT MUA 2 TẶNG 1',
         },
         {
             id:'2',
-            name:'Đến ngày 20/11 giảm 10% cho các Bill trị giá từ 10$',
+            name:'ĐẾN NGÀY 20.11 GIẢM 10% CHO CÁC BILL GIÁ TRỊ TỪ 10$',
         },
         {
             id:'3',
-            name:'Tặng móc khóa cho các Bill trị giá từ 15$ trở lên',
+            name:'TẶNG MÓC KHÓA CHO CÁC BILL TRỊ GIÁ TỪ 15$ TRỞ LÊN',
+        },
+        {
+            id:'4',
+            name:'TRONG NGÀY 20.11 GIẢM GIÁ 10% CÁC SẢN PHẨM ',
+        },
+        {
+            id:'5',
+            name:'TRI ÂN NHÀ GIÁO CÙNG FABI',
         },
     ],
 }

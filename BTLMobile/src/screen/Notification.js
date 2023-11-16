@@ -17,11 +17,11 @@ export default function Notification({ navigation }) {
                         marginTop: 10,
                         marginLeft: 35,
                         fontWeight: '500',
-                        fontSize: 14}}>
+                        fontSize: 14,}}>
                 {Noti.map((item) => (
-                    <View style={{flexDirection:"row", marginTop:15,}}>
-                        <Text style={{fontSize:16}}>{item.id}.</Text>
-                        <Text style={{fontSize:16}}> {item.name} </Text>
+                    <View style={{flexDirection:"row", marginTop:17,}}>
+                        <Text style={{fontSize:17}}>{item.id}.</Text>
+                        <Text style={{fontSize:17}}> {item.name} </Text>
                     </View>
                 ))}
 

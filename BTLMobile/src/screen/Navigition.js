@@ -11,6 +11,7 @@ import Smoothie from './Smoothie'
 import Tea from './Tea'
 import Other from './Others'
 import Product_Detail from './Product_Detail'
+import Snack from './Snack';
 const Tab = createBottomTabNavigator();
 export default function Navigition() {
     return (
@@ -43,6 +44,7 @@ export default function Navigition() {
             <Tab.Screen name="Milk" component={Milk} options={{ tabBarButton: () => null }} />
             <Tab.Screen name="Smoothie" component={Smoothie} options={{ tabBarButton: () => null }} />
             <Tab.Screen name="Tea" component={Tea} options={{ tabBarButton: () => null }} />
+            <Tab.Screen name="Snack" component={Snack} options={{ tabBarButton: () => null }} />
             <Tab.Screen name="Other" component={Other} options={{ tabBarButton: () => null }} />
             <Tab.Screen name="Product_Detail" component={Product_Detail} options={{ tabBarButton: () => null, headerShown: false }} />
         </Tab.Navigator>
