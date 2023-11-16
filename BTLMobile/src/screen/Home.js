@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { TextInput } from 'react-native-paper'
 import { data } from '../../data/hot'
@@ -6,7 +6,7 @@ export default function Home({ navigation }) {
   const { Hot } = data
   const {Snack} = data
   return (
-    <View style={{ marginTop:50 ,backgroundColor:'#faebd7' }}>
+    <SafeAreaView style={{flex:1 ,backgroundColor:'#faebd7', marginTop:50}}>
       <View style={styles.header}>
           <TextInput style={{width: 370 , height:30 , backgroundColor:'white', marginLeft:10, borderRadius:5,borderWidth:1, }} placeholder='Search'  />
       </View>
@@ -78,7 +78,7 @@ export default function Home({ navigation }) {
                   ))}
         </TouchableOpacity>
       </ScrollView>
-      <Text style={{fontSize:20, color:'red',marginLeft:10, marginTop:55}}>Snacks</Text>
+      <Text style={{fontSize:20, color:'red',marginLeft:10, marginTop:40}}>Snacks</Text>
       <ScrollView horizontal style={{flexDirection:'row',}} showsHorizontalScrollIndicator={false}>
         <TouchableOpacity style={styles.product} onPress={() => navigation.navigate('Coffee')}>
           {Snack.map((item) => (
@@ -111,7 +111,7 @@ export default function Home({ navigation }) {
                   ))}
         </TouchableOpacity>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   )
 }
 
