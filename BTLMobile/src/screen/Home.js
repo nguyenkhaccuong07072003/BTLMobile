@@ -6,12 +6,11 @@ export default function Home({ navigation }) {
   const { Hot } = data
   const {Snack} = data
   return (
-    <SafeAreaView style={{flex:1 ,backgroundColor:'#faebd7', marginTop:50}}>
+    <SafeAreaView style={{flex:1 , marginTop:50, backgroundColor:'#fff'}}>
       <View style={styles.header}>
           <TextInput style={{width: 370 , height:30 , backgroundColor:'white', marginLeft:10, borderRadius:5,borderWidth:1, }} placeholder='Search'  />
       </View>
-
-      <ScrollView horizontal style={{flexDirection:'row',marginLeft:10, marginRight:10, }} showsHorizontalScrollIndicator={false}>
+      <ScrollView horizontal style={{flexDirection:'row',marginLeft:10, marginRight:10,  }} showsHorizontalScrollIndicator={false}>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Coffee')}>
             <Text style={{ color: '#000000', fontSize: 16, fontWeight: '600' }}>
               Coffee
@@ -45,8 +44,8 @@ export default function Home({ navigation }) {
       </ScrollView>
 
 
-      <Text style={{fontSize:20, color:'red',marginLeft:10, marginTop:20}}>Recommmend</Text>
-      <ScrollView horizontal style={{flexDirection:'row',}} showsHorizontalScrollIndicator={false}>
+      <Text style={{fontSize:20, color:'red',marginLeft:10, marginTop:5}}>Recommmend</Text>
+      <ScrollView horizontal style={{flexDirection:'row', borderBottomWidth: 1, borderColor: '#ccc',}} showsHorizontalScrollIndicator={false} >
         <TouchableOpacity style={styles.product} onPress={() => navigation.navigate('Coffee')}>
           {Hot.map((item) => (
             <TouchableOpacity key={item.id} onPress={() => navigation.navigate('Product_Detail')} style={{marginRight: 20}}>
@@ -78,7 +77,7 @@ export default function Home({ navigation }) {
                   ))}
         </TouchableOpacity>
       </ScrollView>
-      <Text style={{fontSize:20, color:'red',marginLeft:10, marginTop:40}}>Snacks</Text>
+      <Text style={{fontSize:20, color:'red',marginLeft:10, marginTop:35}}>Snacks</Text>
       <ScrollView horizontal style={{flexDirection:'row',}} showsHorizontalScrollIndicator={false}>
         <TouchableOpacity style={styles.product} onPress={() => navigation.navigate('Coffee')}>
           {Snack.map((item) => (
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
   button: {
     width:100,
     height:24,
-    backgroundColor: '#f0ffff',
+    backgroundColor: '#ffebcd',
     alignItems: 'center',
     margin:5,
     borderRadius: 16,
