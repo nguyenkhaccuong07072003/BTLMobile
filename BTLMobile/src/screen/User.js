@@ -17,17 +17,17 @@ export default function User({ navigation }) {
             </View>
             {/* <TopTab/> */}
             <TopTab selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-            <View>
+            {/* <View>
                 <TouchableOpacity onPress={() => navigation.navigate('Product_Detail')}>
                     <Text style={{fontSize:20,  textAlign:'center',paddingVertical:13, backgroundColor: '#faebd7'}}>Đăng xuất</Text>
                 </TouchableOpacity>
-            </View>
+            </View> */}
         </View>
     )
 }
 function TopTab({ selectedTab, setSelectedTab }){
     const Tab = createMaterialTopTabNavigator();
-    const UserInfo = () => {
+    const UserInfo = ({navigation}) => {
         return (
             <View style={{flex:1,backgroundColor:'#fff'}} >
                 <View style={{marginHorizontal:30, marginTop:30, gap:35, }}>
@@ -51,6 +51,11 @@ function TopTab({ selectedTab, setSelectedTab }){
                     <Text style={{fontSize:18}}>Email:</Text>
                     <Text style={{fontSize:18}}>thao@gmail.com</Text>
                   </View>
+                </View>
+                <View style={{marginTop:153,}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                        <Text style={{fontSize:20,  textAlign:'center',paddingVertical:13, backgroundColor: '#faebd7'}}>Đăng xuất</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
